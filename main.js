@@ -2,7 +2,36 @@
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
 
+const express = require('express')
+const server = express()
+const port = 3000
 
+const mysql = require("mysql");
+// Coloca aquí tus credenciales
+const connection = mysql.createPool({
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "test"
+});
+
+server.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+server.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
+
+  connection.query('CREATE TABLE testname(id int, name text)', (err, rows) => {
+    if (err) throw err;
+    console.log('The solution is: ', rows);
+  });
+
+  connection.query('SELECT * FROM testname', (err, rows) => {
+    if (err) throw err;
+    console.log('The solution is: ', rows);
+  });
+})
 
 function createWindow () {
   // Create the browser window.
