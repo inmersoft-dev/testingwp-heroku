@@ -6,11 +6,6 @@ const mysql = require("mysql");
 
 server.get('/', (req, res) => {
   res.send('Hello World!')
-})
-
-server.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-
   // Coloca aquí tus credenciales
   const connection = mysql.createPool({
     host: "xlf3ljx3beaucz9x.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
@@ -20,6 +15,10 @@ server.listen(port, () => {
   });
 
   console.log(connection);
+})
+
+server.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
 
   /*connection.query('CREATE TABLE testname(id int, name text)', (err, rows) => {
     if (err) throw err;
@@ -31,3 +30,5 @@ server.listen(port, () => {
     console.log('The solution is: ', rows);
   });*/
 })
+
+server.timeout = 100000;
