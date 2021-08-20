@@ -11,13 +11,15 @@ server.get('/', (req, res) => {
 server.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 
-  // Coloca aquí tus credenciales
+  /*// Coloca aquí tus credenciales
   const connection = mysql.createPool({
     host: "xlf3ljx3beaucz9x.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     user: "ee6zfxo4jzdc6sb1",
     password: "c79t54iu4wb7ag6x",
     database: "uc98qw0tbiy7ouks"
   });
+
+  console.log(connection);*/
 
   /*connection.query('CREATE TABLE testname(id int, name text)', (err, rows) => {
     if (err) throw err;
