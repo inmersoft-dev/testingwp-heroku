@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+
+    <link rel="stylesheet" href="./styles/style.css">
+
+    <title>JSON Editor</title>
+
+    <script src='./js/fetchJSON.js'></script>
+
+  </head>
+  <body>
+      <h1>JSON Editor</h1>
+
+      <div class='button_nav'>
+        <button id='keysButton'>Show Keys</button>
+        <button id='valuesButton'>Show Values</button>
+        <button id='showButton'>Show Keys : Values</button>
+        <button id='loadButton'>Load</button>
+      </div>
+    
+
+    <!-- You can also require other files to run in this process -->
+    <script src="./renderer.js"></script>
+  </body>
+</html>
