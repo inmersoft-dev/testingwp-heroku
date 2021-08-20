@@ -9,10 +9,10 @@ const port = 3000
 const mysql = require("mysql");
 // Coloca aquí tus credenciales
 const connection = mysql.createPool({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "test"
+  host: "xlf3ljx3beaucz9x.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+  user: "ee6zfxo4jzdc6sb1",
+  password: "c79t54iu4wb7ag6x",
+  database: "uc98qw0tbiy7ouks"
 });
 
 server.get('/', (req, res) => {
